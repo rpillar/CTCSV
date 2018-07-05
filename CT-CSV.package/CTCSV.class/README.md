@@ -1,0 +1,1 @@
+Class to load a CSv file (with headers). Data stored as an OrderedCollection containing a set of dictionaries - one for each line -> keys are the header values and therefore are assumed to be the first row in the file.
