@@ -1,5 +1,5 @@
 loading
-loadCSV: filePath
+loadFromCSVFile: filePath
 
 	| count dict stream |
 
@@ -16,6 +16,5 @@ loadCSV: filePath
 		].
 		self data add: dict.
 	].
-	stream close.
-	
-	self 
+	stream close. 
+	self success: true.
