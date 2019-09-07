@@ -1,1 +1,3 @@
 Class to load a CSV file (with headers). Data stored as an OrderedCollection containing a set of dictionaries - one for each line -> keys are the header values and therefore are assumed to be the first row in the file.
+
+Because NeoCSVReader processes all fields as strings (unless you specify otherwise) we need to supply a specification (we call it a schema) that describes what format the fields are - basically string or number ('str' / 'num' respectively). The _schema_ will be supplied in the form of an array of associations.

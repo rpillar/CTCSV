@@ -1,7 +1,7 @@
 loading
 loadFromCSVFile: filePath
 
-	| count dict stream |
+	| col count dict stream |
 
 	( filePath asFileReference exists ) ifFalse: [ self success: false. ^ '' ].
 	
@@ -11,7 +11,8 @@ loadFromCSVFile: filePath
 		dict := Dictionary new.
 		count := 1. 
 		( row size ) timesRepeat: [ 
-			dict at: ( ( self headers at: count ) asSymbol ) put: ( row at: count ).
+			col := self parseCSVColumnString: ( row at: count ).
+			dict at: ( ( self headers at: count ) asSymbol ) put: col.
 			count := count + 1.
 		].
 		self data add: dict.

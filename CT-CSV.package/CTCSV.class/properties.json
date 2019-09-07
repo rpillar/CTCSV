@@ -1,5 +1,5 @@
 {
-	"commentStamp" : "RichardPillar 7/26/2018 20:39",
+	"commentStamp" : "RichardPillar 9/6/2019 23:00",
 	"super" : "Object",
 	"category" : "CT-CSV",
 	"classinstvars" : [ ],
@@ -8,6 +8,7 @@
 	"instvars" : [
 		"data",
 		"headers",
+		"schema",
 		"success"
 	],
 	"name" : "CTCSV",
