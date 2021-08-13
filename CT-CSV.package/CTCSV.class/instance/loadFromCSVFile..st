@@ -8,7 +8,7 @@ loadFromCSVFile: filePath
 	stream := ( NeoCSVReader on: filePath asFileReference readStream ).
 	self headers: stream readHeader.
 	stream do: [ :row | 
-		dict := Dictionary new.
+		dict := CTDictionary new.
 		count := 1. 
 		( row size ) timesRepeat: [ 
 			col := self parseCSVColumnString: ( row at: count ).
