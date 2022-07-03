@@ -1,15 +1,18 @@
 {
 	"instance" : {
 		"success:" : "RichardPillar 7/4/2018 20:01",
+		"data" : "RichardPillar 7/2/2018 23:23",
+		"loadFromCSVFile:" : "RichardPillar 2/1/2022 18:23",
 		"headers" : "RichardPillar 7/2/2018 23:09",
 		"toJsonString" : "RichardPillar 9/9/2019 22:33",
-		"loadFromCSVFile:" : "RichardPillar 8/13/2021 18:36",
-		"data" : "RichardPillar 7/2/2018 23:23",
+		"parseCSVColumnString:" : "RichardPillar 1/24/2022 23:08",
 		"data:" : "RichardPillar 7/2/2018 23:09",
-		"parseCSVColumnString:" : "RichardPillar 9/7/2019 22:07",
 		"success" : "RichardPillar 7/4/2018 20:01",
+		"data1" : "RichardPillar 1/18/2022 19:38",
 		"initialize" : "RichardPillar 7/2/2018 23:18",
-		"writeToCSVFile:" : "RichardPillar 3/14/2021 11:40",
+		"delimiter" : "RichardPillar 1/18/2022 19:41",
+		"delimiter:" : "RichardPillar 1/18/2022 19:38",
+		"writeToCSVFile:" : "RichardPillar 1/18/2022 19:50",
 		"headers:" : "RichardPillar 7/2/2018 23:09"
 	},
 	"class" : { }

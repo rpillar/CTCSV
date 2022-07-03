@@ -1,11 +1,13 @@
 loading
 loadFromCSVFile: filePath
 
-	| col count dict stream |
+	| col csv count dict stream |
 
 	( filePath asFileReference exists ) ifFalse: [ self success: false. ^ '' ].
 
-	stream := ( NeoCSVReader on: filePath asFileReference readStream ).
+	csv := ( NeoCSVReader new separator: self delimiter ).
+	
+	stream := ( csv on: filePath asFileReference readStream ).
 	self headers: stream readHeader.
 	stream do: [ :row | 
 		dict := CTDictionary new.

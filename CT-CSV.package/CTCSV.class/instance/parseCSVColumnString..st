@@ -1,7 +1,7 @@
 accessing
 parseCSVColumnString: aString
 
-	"attempt to parse the colum string and return the appropriate type."
+	"attempt to parse the column string and return the appropriate type."
 	| col |
 	
 	[ aString asDate. col := aString ] on: Exception do: [  

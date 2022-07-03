@@ -7,6 +7,7 @@
 	"classvars" : [ ],
 	"instvars" : [
 		"data",
+		"delimiter",
 		"headers",
 		"success"
 	],

@@ -14,11 +14,6 @@ writeToCSVFile: filePath
 	].	
 
 	"write the file ..."
-	"FileStream
-		forceNewFileNamed: filePath
-		do: [ :stream |
-			(NeoCSVWriter on: stream)
-				nextPutAll: fileContents ].	"
 	( File named: filePath ) writeStreamDo: [ :stream | ( NeoCSVWriter on: stream ) nextPutAll: fileContents ].
 	
 	self success: true.
