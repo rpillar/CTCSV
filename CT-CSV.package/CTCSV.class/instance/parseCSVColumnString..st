@@ -5,7 +5,7 @@ parseCSVColumnString: aString
 	| col |
 	
 	[ aString asDate. col := aString ] on: Exception do: [  
-		[ col := NeoNumberParser parse: aString. ] on: Error do: [ col := aString ].
+		[ col := aString asNumber. ] on: Error do: [ col := aString ].
 	].
 
 	^ col.
