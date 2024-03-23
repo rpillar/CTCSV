@@ -8,6 +8,11 @@ Class {
 }
 
 { #category : #'code-critics' }
+ManifestCTCSV class >> ruleCollectionProtocolRuleV1FalsePositive [
+	^ #(#(#(#RGMethodDefinition #(#CTCSV #loadFromCSVFile: #false)) #'2024-03-21T21:14:07.418699+00:00') #(#(#RGMethodDefinition #(#CTCSV #writeToCSVFile: #false)) #'2024-03-21T21:15:30.00599+00:00') )
+]
+
+{ #category : #'code-critics' }
 ManifestCTCSV class >> ruleGRAnsiExceptionsRuleV1FalsePositive [
 	^ #(#(#(#RGMethodDefinition #(#CTCSV #parseCSVColumnString: #false)) #'2019-09-07T22:02:41.636849+01:00') )
 ]
@@ -35,4 +40,19 @@ ManifestCTCSV class >> ruleRBTempsReadBeforeWrittenRuleV1FalsePositive [
 { #category : #'code-critics' }
 ManifestCTCSV class >> ruleRBUtilityMethodsRuleV1FalsePositive [
 	^ #(#(#(#RGMethodDefinition #(#CTCSV #parseCSVColumnString: #false)) #'2019-09-07T22:02:37.637699+01:00') )
+]
+
+{ #category : #'code-critics' }
+ManifestCTCSV class >> ruleReCompactSourceCodeRuleV1FalsePositive [
+	^ #(#(#(#RGMethodDefinition #(#CTCSV #writeToCSVFile: #false)) #'2024-03-11T13:23:55.822614+01:00') #(#(#RGMethodDefinition #(#CTCSV #loadFromCSVFile: #false)) #'2024-03-21T21:06:27.728858+00:00') #(#(#RGMethodDefinition #(#CTCSV #parseCSVColumnString: #false)) #'2024-03-21T21:28:53.668893+00:00') )
+]
+
+{ #category : #'code-critics' }
+ManifestCTCSV class >> ruleTempsReadBeforeWrittenRuleV1FalsePositive [
+	^ #(#(#(#RGMethodDefinition #(#CTCSV #parseCSVColumnString: #false)) #'2024-03-21T21:30:04.913117+00:00') )
+]
+
+{ #category : #'code-critics' }
+ManifestCTCSV class >> ruleUtilityMethodsRuleV1FalsePositive [
+	^ #(#(#(#RGMethodDefinition #(#CTCSV #parseCSVColumnString: #false)) #'2024-03-21T21:29:22.461938+00:00') )
 ]

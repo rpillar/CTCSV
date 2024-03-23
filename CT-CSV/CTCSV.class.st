@@ -11,7 +11,7 @@ Class {
 		'headers',
 		'success'
 	],
-	#category : 'CT-CSV'
+	#category : #'CT-CSV'
 }
 
 { #category : #accessing }
@@ -67,24 +67,15 @@ CTCSV >> loadFromCSVFile: filePath [
 { #category : #accessing }
 CTCSV >> parseCSVColumnString: aString [
 
-	"attempt to parse the colum string and return the appropriate type."
+	"attempt to parse the column string and return a thing as either a string or a number."
 	| col |
 	
+	"dates are returned as strings - numbers are returned as numbers and everything else defaults to a string type"
 	[ aString asDate. col := aString ] on: Exception do: [  
 		[ col := NeoNumberParser parse: aString. ] on: Error do: [ col := aString ].
 	].
 
 	^ col.
-]
-
-{ #category : #accessing }
-CTCSV >> schema [
-	^ schema
-]
-
-{ #category : #accessing }
-CTCSV >> schema: anObject [
-	schema := anObject
 ]
 
 { #category : #accessing }
@@ -102,6 +93,7 @@ CTCSV >> writeToCSVFile: filePath [
 
 	| fileContents |
 
+	"does my file exist ?"
 	( filePath asFileReference exists ) ifTrue: [ self success: false. ^ '' ].
 	
 	"collect keys / values as a set of collection objects."
@@ -111,13 +103,12 @@ CTCSV >> writeToCSVFile: filePath [
 	self data do: [ :line |
 		fileContents add: line values.
 	].	
-
-	"write the file ..."
-	FileStream
-		forceNewFileNamed: filePath
-		do: [ :stream |
-			(NeoCSVWriter on: stream)
-				nextPutAll: fileContents ].	
+	
+	"write the file"
+	filePath asFileReference ensureDelete;
+	writeStreamDo: [ :stream |
+		(NeoCSVWriter on: stream)
+			nextPutAll: fileContents ].	
 	
 	self success: true.
 ]
